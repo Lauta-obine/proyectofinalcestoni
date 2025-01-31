@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block  title %} Articulo {% endblock %}
+
+{% block content %}
+<h1>{{ object.titulo}}</h1>
+
+{% if object.imagen %}
+<img src="{{ articulo.imagen.url }}"  alt="Imagen de {{ Articulo.titulo }}" width="300" height="300">
+{% else %}
+<img src="default-image.jpg"  alt="Imagen por defecto">
+{% endif %}
+
+<h5>{{articulo.descripcion}}</h5>
+<p>{{articulo.contenido}}</p>
+<p>{{articulo.user}}</p>
+
+<p>{{articulo.fecha_publicacion|date:"d/m/Y"}}</p>
+
+
+
+
+
+{% endblock content %}

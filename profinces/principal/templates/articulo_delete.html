@@ -1,0 +1,12 @@
+{% block  title %} ELiminar Articulo {% endblock %}
+
+{% block content %}
+<h1>Eliminar Articulo {{Articulo.titulo}}</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn-danger">Eliminar</button>
+        <a href="{% url 'articulos' %}">Cancelar</a>
+    </form>
+
+{% endblock content %}

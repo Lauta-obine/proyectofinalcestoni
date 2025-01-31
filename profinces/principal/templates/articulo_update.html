@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block  title %} Actualizar Articulo {% endblock %}
+
+{% block content %}
+<h1>Actualizar Articulo</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Guardar Cambios</button>
+</form>
+<a href="{% url 'articulos' %}" class="btn-danger">Cancelar</a>
+
+
+{% endblock content %}
