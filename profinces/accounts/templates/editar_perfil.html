@@ -1,0 +1,17 @@
+
+
+{% extends 'base.html' %}
+
+{% block  title %} Editar Perfil {% endblock %}
+
+{% block content %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token%}
+        <table>
+            {{form.as_table}}
+            {{avatar_form.as_table}}
+        </table>
+        <button type="submit">Guardar</button>
+    </form>
+    <p><a href="{% url 'accounts:cambiar_contrasena' %}">Cambiar Contraseña</a></p>
+{% endblock content %}
